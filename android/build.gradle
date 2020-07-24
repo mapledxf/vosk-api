@@ -40,7 +40,7 @@ android {
             }
         }
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
         }
     }
     sourceSets {
@@ -102,9 +102,9 @@ task swig {
     }
 }
 
-task kaldi(type: Exec) {
-    commandLine './build-kaldi.sh'
-    environment ANDROID_SDK_HOME: android.getSdkDirectory()
-}
+//task kaldi(type: Exec) {
+//    commandLine './build-kaldi.sh'
+//    environment ANDROID_SDK_HOME: android.getSdkDirectory()
+//}
 
-preBuild.dependsOn kaldi, swig
+preBuild.dependsOn swig
