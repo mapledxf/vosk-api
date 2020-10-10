@@ -70,8 +70,8 @@ if [ ! -d ${KALDI_PATH} ]; then
 fi
 
 # Architecture-specific part
-#for arch in arm32 arm64 x86_64 x86; do
-for arch in x86_64; do
+for arch in arm32 arm64 x86_64 x86; do
+#for arch in x86_64; do
 	case $arch in
 		arm32)
 			BLAS_ARCH=ARMV7
