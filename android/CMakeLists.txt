@@ -34,14 +34,14 @@ set(API_SOURCES
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DFST_NO_DYNAMIC_LINKING")
 
-add_library( vosk_jni SHARED
+add_library( offline_asr_jni SHARED
              build/generated-src/cpp/vosk_wrap.cc
              ${API_SOURCES}
 )
 
 include_directories("${PROJECT_SOURCE_DIR}/../src" "build/kaldi_${KALDI_SUFFIX}/kaldi/src" "build/kaldi_${KALDI_SUFFIX}/local/include")
 
-target_link_libraries( vosk_jni
+target_link_libraries( offline_asr_jni
              ${KALDI_ROOT}/src/online2/kaldi-online2.a
              ${KALDI_ROOT}/src/decoder/kaldi-decoder.a
              ${KALDI_ROOT}/src/ivector/kaldi-ivector.a

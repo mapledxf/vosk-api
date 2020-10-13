@@ -95,7 +95,7 @@ task swig {
         exec {
             commandLine 'swig',
             "-c++",
-            "-java", "-package", "org.kaldi",
+            "-java", "-package", "com.vwm.asr.model",
             "-outdir", "build/generated-src/java", "-o", "build/generated-src/cpp/vosk_wrap.cc",
             "../src/vosk.i"
         }
@@ -108,4 +108,4 @@ task kaldi(type: Exec) {
     environment ANDROID_NDK_HOME: android.getNdkDirectory()
 }
 
-preBuild.dependsOn kaldi, swig
+preBuild.dependsOn swig
